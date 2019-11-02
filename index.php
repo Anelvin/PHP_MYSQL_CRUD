@@ -42,7 +42,14 @@
                                 <td><?php echo $row['title'];?></td>
                                 <td><?php echo $row['description']?></td>
                                 <td><?php echo $row['create_at']?></td>
-                                <td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger">Delete</button></td>
+                                <td>
+                                    <a href="edit.php?id=<?php echo $row['id'];?>" class="btn btn-secondary">
+                                        Edit
+                                    </a> 
+                                    <a href="delete_task.php?id=<?php echo $row['id'];?>" class="btn btn-danger">
+                                        Delete
+                                    </a>
+                                </td>
                             </tr>
                        <?php } ?>
                 </tbody>
