@@ -24,7 +24,29 @@
                 </form>
             </div>
         </div>
+
         <div class="col-md-8">
+            <table class="table table-bordered">
+                <thead>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    <?php
+                        $query="select * from task";
+                        $result_tasks = mysqli_query($conn,$query);
+                        while($row = mysqli_fetch_array($result_tasks)){?>
+                            <tr>
+                                <td><?php echo $row['title'];?></td>
+                                <td><?php echo $row['description']?></td>
+                                <td><?php echo $row['create_at']?></td>
+                                <td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger">Delete</button></td>
+                            </tr>
+                       <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
